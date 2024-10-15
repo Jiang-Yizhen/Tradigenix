@@ -11,11 +11,10 @@ na_prompt = na_prompt_file.to_string(index=False)
 
 
 def cloth_gen(advice, gender):
-    print(f"cloth_gen_gender{gender}")
-    # lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NV.safetensors"
+    lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NA.safetensors"
     if gender == "男":
         lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NA.safetensors"
-    else:
+    else if gender == "女":
         lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NV.safetensors"
 
     prompt = prompt_gen(advice, gender)
