@@ -14,7 +14,7 @@ def cloth_gen(advice, gender):
     lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NA.safetensors"
     if gender == "男":
         lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NA.safetensors"
-    else if gender == "女":
+    elif gender == "女":
         lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NV.safetensors"
 
     prompt = prompt_gen(advice, gender)
