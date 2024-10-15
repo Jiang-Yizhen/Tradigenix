@@ -46,9 +46,9 @@ with gr.Blocks(css="styles.css", theme=gr.themes.Base()) as demo:
                 text_input7 = gr.Textbox(label="肩宽/cm", min_width=100)
                 text_input8 = gr.Textbox(label="腿长/cm", min_width=100)
                 text_input9 = gr.Textbox(label="臂长/cm", min_width=100)
-                dropdown_options1 = ["男", "女"]
+                dropdown_options1 = ["女", "男"]
                 dropdown_input1 = gr.Dropdown(choices=dropdown_options1, label="性别", min_width=100)
-                dropdown_input2 = gr.Dropdown(choices=['倒三角形', '矩形', '苹果形', '沙漏型', '胖型'], label="体型分类", min_width=100)
+                dropdown_input2 = gr.Dropdown(choices=["梨形", "草莓形", "沙漏形", "标准", "苹果形"], label="体型分类", min_width=100)
                 dropdown_input1.change(fn=update_choices, inputs=[dropdown_input1, dropdown_input2], outputs=dropdown_input2)
                 dropdown_options3 = ["浅色", "中等偏黄色", "中等偏褐色", "深色"]
                 dropdown_input3 = gr.Dropdown(choices=dropdown_options3, label="肤色", min_width=100)
