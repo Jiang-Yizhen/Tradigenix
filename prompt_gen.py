@@ -12,6 +12,7 @@ os.environ["OPENAI_BASE_URL"] = "http://15.204.101.64:4000/v1"
 
 
 def prompt_gen(advise, gender):
+    print(gender)
     if gender == "男":
         prompt = na_prompt
         trigger = "A Hanfu"
