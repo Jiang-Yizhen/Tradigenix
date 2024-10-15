@@ -18,23 +18,23 @@ def cloth_gen(advice, gender):
         lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NV.safetensors"
 
     prompt = prompt_gen(advice, gender)
-    start_index = prompt.find("Prompt")
+    start_index = prompt.find("Begin")
     if start_index == -1:
-        start_index = prompt.find("prompt")
+        start_index = prompt.find("begin")
     intro_index = prompt.find("服饰风格介绍")
     cloth_intro = ""
     promptGen = ""
     if start_index != -1:
-        start_index += len("prompt\n")
+        start_index += len("Begin\n")
         end_index = prompt.find("End" or "end")
         if end_index != -1:
             extracted_content = prompt[start_index:end_index]
             promptGen = extracted_content
             print(extracted_content)
         else:
-            print("No 'promptEnd' found after 'prompt'.")
+            print("No 'End' found after 'Begin'.")
     else:
-        print("No 'prompt' found in the text.")
+        print("No 'Begin' found in the text.")
     if intro_index != -1:
         intro_index += len("服饰风格介绍\n")
         cloth_intro = ("汉服，是汉民族的传统服饰。又称衣冠、衣裳、汉装。汉服是中国“衣冠上国”“礼仪之邦”“锦绣中华”的体现，承载了中国的染织绣等杰出"
