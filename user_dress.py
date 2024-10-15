@@ -99,8 +99,8 @@ def user_dress_idm(user_pic, cloth_gen, index):
 
 def user_cloths(user_pic, cloth_gen):
     user_cloth = []
-    for i in range(1, 4):
+    for i in range(1, 7):
         user_cloth.append(user_dress_cat(user_pic, cloth_gen, i))
-    for i in range(4, 6):
-        user_cloth.append(user_dress_idm(user_pic, cloth_gen, i))
+    # for i in range(4, 6):
+    #     user_cloth.append(user_dress_idm(user_pic, cloth_gen, i))
     return user_cloth
