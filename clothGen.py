@@ -24,7 +24,7 @@ def cloth_gen(advice, gender):
     promptGen = ""
     if start_index != -1:
         start_index += len("prompt\n")
-        end_index = prompt.find("promptEnd")
+        end_index = prompt.find("End" or "end")
         if end_index != -1:
             extracted_content = prompt[start_index:end_index]
             promptGen = extracted_content
