@@ -177,7 +177,7 @@ def checklen(text):
 
 def generate_outfit_advice(user_name, height, weight, waist, chest, hip, shoulder_width, leg_length, arm_length, gender,
                            body_type, skin_color, style_preference, lifestyle_requirements, special_requirements,
-                           user_pic):
+                           feedback, user_pic):
     content = (f"""
                        你是一位专业的民族服饰搭配大师，你需要充分了解中华民族的所有民族服饰的相关知识，包括不同民族服饰适合什么样的人群等。
                        你需要对用户的照片和他们的输入信息作出评价，需要分析的因素包括以下内容： 
@@ -197,7 +197,7 @@ def generate_outfit_advice(user_name, height, weight, waist, chest, hip, shoulde
                        根据体型推荐相关服饰，略显肥胖的人会推荐汉服齐腰儒裙等； 男性按身高与袖口来分辨哪种服饰。
                        根据用户信息，用户名为{user_name}，身高为{height}，体重为{weight}，腰围为{waist}，胸围为{chest}，臀围为{hip}，
                        肩宽为{shoulder_width}，腿长为{leg_length}，臂长为{arm_length}，性别为{gender}，体型分类为{body_type}，肤色为{skin_color}，
-                       穿衣风格偏好为{style_preference}，生活方式和场景需求为{lifestyle_requirements}，其他特殊需求为{special_requirements}。
+                       穿衣风格偏好为{style_preference}，生活方式和场景需求为{lifestyle_requirements}，其他特殊需求为{special_requirements},{feedback}。
                        请给出穿搭建议。
                        """)
     global answer
