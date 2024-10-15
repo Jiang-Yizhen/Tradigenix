@@ -17,7 +17,7 @@ def prompt_gen(advise, gender):
     if gender == "男":
         prompt = na_prompt
         trigger = "A Hanfu"
-    else if gender == "女":
+    elif gender == "女":
         prompt = nv_prompt
         trigger = "a Hanfu"
 
