@@ -34,7 +34,7 @@ def cloth_gen(advice, gender):
     else:
         print("No 'prompt' found in the text.")
     if intro_index != -1:
-        intro_index += len("服饰风格介绍\n\n")
+        intro_index += len("服饰风格介绍\n")
         cloth_intro = ("汉服，是汉民族的传统服饰。又称衣冠、衣裳、汉装。汉服是中国“衣冠上国”“礼仪之邦”“锦绣中华”的体现，承载了中国的染织绣等杰出"
                        "工艺和美学，传承了30多项中国非物质文化遗产以及受保护的中国工艺美术。\n") + prompt[intro_index:]
         print(cloth_intro)
