@@ -47,7 +47,7 @@ def cloth_gen(advice, gender):
         "fal-ai/fast-sdxl",
         arguments={
             "prompt": promptGen,
-            "negative_prompt": "human, people, person, man, woman, child, model, face, head, eyes, hands, arms, legs, "
+            "negative_prompt": "face, head, human, people, person, man, woman, child, model, eyes, hands, arms, legs, "
                                "feet, hair, portrait, worst quality, low quality, normal quality, lowres, signature, "
                                "watermark, jpeg artifacts, logo, monochrome, grayscale, ugly",
             "image_size": "portrait_4_3",
