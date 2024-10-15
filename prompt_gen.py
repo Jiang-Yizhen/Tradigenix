@@ -30,7 +30,7 @@ def prompt_gen(advise, gender):
             {"role": "user",
              "content": advise + "根据建议，从以下的触发词、种类、上衣、裙子、领子、袖子、袖口、腰饰、裙子详述中每个挑选一个词，分点描述，触发词固定选择为" + trigger +
                                  ", 把英文也附在后面的括号里，然后在下面先加一条prompt，标题为‘# prompt’,并在此标题下总结所有英文描述，用逗"
-                                 "号间隔，再加上‘, (white background)’, 然后换行后以'promptEnd'结尾；再然后加一条服饰风格介绍，标题为"
+                                 "号间隔，再加上‘, white background’, 然后换行后以'promptEnd'结尾；再然后加一条服饰风格介绍，标题为"
                                  "‘# 服饰风格介绍’，并在此标题下以介绍的口吻总结所有的中文描述。" + prompt,
              }
         ]
