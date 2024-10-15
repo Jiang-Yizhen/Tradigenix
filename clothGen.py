@@ -18,7 +18,9 @@ def cloth_gen(advice, gender):
         lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NV.safetensors"
 
     prompt = prompt_gen(advice, gender)
-    start_index = prompt.find("prompt" or "Prompt")
+    start_index = prompt.find("Prompt")
+    if start_index == -1:
+        start_index = prompt.find("prompt")
     intro_index = prompt.find("服饰风格介绍")
     cloth_intro = ""
     promptGen = ""
