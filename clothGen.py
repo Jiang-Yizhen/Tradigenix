@@ -11,7 +11,7 @@ na_prompt = na_prompt_file.to_string(index=False)
 
 
 def cloth_gen(advice, gender):
-    lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NA.safetensors"
+    lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NV.safetensors"
     if gender == "男":
         lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NA.safetensors"
     elif gender == "女":
