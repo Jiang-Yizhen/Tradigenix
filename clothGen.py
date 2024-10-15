@@ -11,7 +11,8 @@ na_prompt = na_prompt_file.to_string(index=False)
 
 
 def cloth_gen(advice, gender):
-    lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NV.safetensors"
+    print(f"cloth_gen_gender{gender}")
+    # lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NV.safetensors"
     if gender == "男":
         lora_path = "https://huggingface.co/PPSharks/PPSharksModels/resolve/main/NA.safetensors"
     else:
@@ -23,7 +24,7 @@ def cloth_gen(advice, gender):
     cloth_intro = ""
     promptGen = ""
     if start_index != -1:
-        start_index += len("prompt\n\n")
+        start_index += len("prompt\n")
         end_index = prompt.find("promptEnd")
         if end_index != -1:
             extracted_content = prompt[start_index:end_index]
