@@ -1,5 +1,5 @@
 import gradio as gr
-from suggestion import generate_outfit_advice
+from sugg_gene import suggest_gene
 from clothGen import cloth_gen
 from user_dress import user_cloths
 import requests
@@ -10,13 +10,14 @@ from cal_compatibility import cal_compatibility
 
 
 gen_pic_num = 6
+save_directory = "downloads"
 
 
 def get_select_index(evt: gr.SelectData, gallery):
     print(gallery[evt.index][0])
-    # response = requests.get(gallery[evt.index][0])
-    # img = Image.open(BytesIO(response.content))
-    return gallery[evt.index][0]
+    with open(os.path.join(save_directory, f"cloth_intro_{evt.index//2+1}.txt"), "r") as f:
+        introduction = f.read()
+    return gallery[evt.index][0], introduction
 
 
 def update_choices(dropout1, dropout2,):
@@ -71,7 +72,7 @@ with gr.Blocks(css="styles.css", theme=gr.themes.Base()) as demo:
             image_output_1 = gr.Image(label="显示图像", value="image 209.png")
 
             gallery_1 = gr.Gallery(
-                label="服装", elem_id="gallery",
+                label="服装", elem_id="gallery", interactive=False,
                 value=[
                     # os.path.join(example_path, '上衣/_WEB_2016_09_26__2016092617451357e8ee2957aa1_TD.jpg'),
                     # os.path.join(example_path, '上衣/_WEB_2016_09_27__2016092717211057ea3a069c749_TD.jpg'),
@@ -108,7 +109,7 @@ with gr.Blocks(css="styles.css", theme=gr.themes.Base()) as demo:
             with gr.Row():
                 submit_button_3 = gr.Button("服饰及搭配兼容性排序")
             with gr.Row():
-                image_output_5 = gr.Image(label="显示图像", show_label=False, min_width=200, height=350)
+                image_output_5 = gr.Image(label="显示图像", show_label=False, min_width=200, height=350, interactive=False)
                 intro = gr.Textbox(label="服饰介绍", lines=14, max_lines=14)
             with gr.Row():
                 gallery_user = gr.Gallery(
@@ -119,13 +120,14 @@ with gr.Blocks(css="styles.css", theme=gr.themes.Base()) as demo:
                     object_fit="contain",
                     min_width=200,
                     height=350,
-                    )
+                )
             with gr.Row():
                 submit_button_4 = gr.Button("虚拟试穿")
             with gr.Row():
-                    feedback = gr.Textbox(label="反馈", placeholder="可以从款式、颜色、图案、风格倾向、文化偏好角度进行反馈", lines=1,
-                                          max_lines=1, elem_id="feedback")
-                    submit_button_5 = gr.Button("反馈")
+                feedback = gr.Textbox(label="反馈", placeholder="可以从款式、颜色、图案、风格倾向、文化偏好角度进行反馈", lines=1,
+                                      max_lines=1, elem_id="feedback")
+            with gr.Row():
+                submit_button_5 = gr.Button("反馈")
     with gr.Row():
         gr.Markdown("""
                     女性体型备注：
@@ -143,28 +145,28 @@ with gr.Blocks(css="styles.css", theme=gr.themes.Base()) as demo:
                     5. **胖型身材**：腰围比胸围或肩宽**至少大10厘米**
                     """)
 
-    submit_button_1.click(fn=generate_outfit_advice,
+    submit_button_1.click(fn=suggest_gene,
                           inputs=[text_input1, text_input2, text_input3, text_input4, text_input5,
                                   text_input6, text_input7, text_input8, text_input9, dropdown_input1,
                                   dropdown_input2, dropdown_input3, text_input10, text_input11, text_input12,
                                   feedback, user_pic],
-                          outputs=text_output1)
+                          outputs=[text_output1])
     submit_button_2.click(fn=cloth_gen,
-                          inputs=[text_output1, dropdown_input1],
+                          inputs=dropdown_input1,
                           outputs=[gallery_1, image_output_5, intro])
 
-    gallery_1.select(get_select_index, gallery_1, image_output_5)
+    gallery_1.select(fn=get_select_index, inputs=gallery_1, outputs=[image_output_5, intro])
     submit_button_3.click(fn=cal_compatibility,
                           inputs=[],
                           outputs=[gallery_4])
     submit_button_4.click(fn=user_cloths,
                           inputs=[user_pic, image_output_5],
                           outputs=gallery_user)
-    submit_button_5.click(fn=generate_outfit_advice,
+    submit_button_5.click(fn=suggest_gene,
                           inputs=[text_input1, text_input2, text_input3, text_input4, text_input5,
                                   text_input6, text_input7, text_input8, text_input9, dropdown_input1,
                                   dropdown_input2, dropdown_input3, text_input10, text_input11, text_input12,
                                   feedback, user_pic],
-                          outputs=text_output1)
+                          outputs=[text_output1])
 
 demo.launch(server_port=7860, share=True)
