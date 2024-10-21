@@ -205,5 +205,5 @@ def generate_outfit_advice(user_name, height, weight, waist, chest, hip, shoulde
     question = checklen(getText("user", content, user_pic))
     main(appid, api_key, api_secret, imageunderstanding_url, question)
     getText("assistant", answer, user_pic)
-    return gr.Markdown(answer)
+    return answer
 
