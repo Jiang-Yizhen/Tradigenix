@@ -111,19 +111,18 @@ with gr.Blocks(css="styles.css", theme=gr.themes.Base()) as demo:
                 image_output_5 = gr.Image(label="显示图像", show_label=False, min_width=200, height=350)
                 intro = gr.Textbox(label="服饰介绍", lines=14, max_lines=14)
             with gr.Row():
+                gallery_user = gr.Gallery(
+                    label="试穿结果",
+                    elem_id="gallery",
+                    value=[],
+                    columns=[3], rows=[2],
+                    object_fit="contain",
+                    min_width=200,
+                    height=350,
+                    )
+            with gr.Row():
                 submit_button_4 = gr.Button("虚拟试穿")
             with gr.Row():
-                with gr.Column(scale=1):
-                    gallery_user = gr.Gallery(
-                        label="试穿结果",
-                        elem_id="gallery",
-                        value=[],
-                        columns=[3], rows=[2],
-                        object_fit="contain",
-                        min_width=200,
-                        height=350,
-                    )
-                with gr.Column(scale=1):
                     feedback = gr.Textbox(label="反馈", placeholder="可以从款式、颜色、图案、风格倾向、文化偏好角度进行反馈", lines=1,
                                           max_lines=1, elem_id="feedback")
                     submit_button_5 = gr.Button("反馈")
