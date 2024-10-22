@@ -21,15 +21,16 @@ def cal_compatibility():
     n = 4096
     access_feature = []
     cloth_feature = []
-    for item_id in range(1, 7):
+    for item_id in range(1, 9):
         access_feature.append(vgg16.extract_features('downloads/access_' + '%s.jpg' % item_id)[0])
+    for item_id in range(1, 7):
         cloth_feature.append(vgg16.extract_features('downloads/gen_cloth_' + '%s.jpeg' % item_id)[0])
 
     best_score = float('-inf')
     best_cloth = 0
     best_access = 0
-    for i in range(1, 7):
-        for j in range(1, 6):
+    for i in range(1, 9):
+        for j in range(1, 7):
             score = cosine_similarity(access_feature[i - 1], cloth_feature[j - 1])
             if score > best_score:
                 best_score = score
@@ -38,6 +39,3 @@ def cal_compatibility():
     print(best_cloth, best_access)
     picture = [f"downloads/gen_cloth_{best_cloth}.jpeg", f"downloads/access_{best_access}.jpg"]
     return picture
-
-
-# cal_compatibility()
