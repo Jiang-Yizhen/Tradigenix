@@ -25,7 +25,7 @@ def suggest_gene(user_name, height, weight, waist, chest, hip, shoulder_width, l
              "content": "You are a helpful assistant.", },
             {"role": "user",
              "content": "你是一位专业的民族服饰搭配大师，你需要充分了解中华民族的所有民族服饰的相关知识，包括不同民族服饰适合什么样的人群等。"
-                        "以下是用户分析与三段提示词，请据此给出穿搭建议，要求以三段提示词为主要建议参考" + analyse + prompts,
+                        "以下是用户分析与三套服装描述，请据此给出穿搭建议，要求以三段提示词为主要建议参考" + analyse + prompts,
              }
         ]
 
