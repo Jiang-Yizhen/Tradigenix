@@ -92,6 +92,8 @@ with gr.Blocks(css="styles.css", theme=gr.themes.Base()) as demo:
                     'downloads/access_4.jpg',
                     'downloads/access_5.jpg',
                     'downloads/access_6.jpg',
+                    'downloads/access_7.jpg',
+                    'downloads/access_8.jpg',
                 ],
                 columns=[4], rows=[2], object_fit="contain", height=250, min_width=450)
             submit_button_2 = gr.Button("AI智能分析，生成民族服饰")
