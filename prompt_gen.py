@@ -28,10 +28,9 @@ def prompt_gen(advise, gender):
             {"role": "system",
              "content": "You are a helpful assistant.",},
             {"role": "user",
-             "content": advise + "根据建议，从以下的触发词、种类、上衣、裙子、领子、袖子、袖口、腰饰、裙子详述中每个挑选一个词，分点描述，触发词固定选择为" + trigger +
-                                 ", 把英文也附在后面的括号里，然后在下面先加一条Prompt，以‘Begin’为开头后换行,然后输出所有英文描述，用逗"
-                                 "号间隔，再加上‘, white background’, 再然后换行后以'End'结尾；接着再加一条服饰风格介绍，以"
-                                 "‘服饰风格介绍’为开头后换行，再以介绍的口吻总结输出所有的中文描述。" + prompt,
+             "content": advise + "根据上述建议，从以下prompt库中的触发词、种类、上衣、裙子、领子、袖子、袖口、腰饰、裙子详述中每个挑选一个词，分点描述，触发"
+                                 "词固定选择为" + trigger + "，然后在最下面列出所有Prompt，以‘Begin’为开头后换行, 输出所有英文描述，用逗"
+                                 "号间隔，再加上‘, white background’, 再然后换行后以'End'结尾。prompt库如下：" + prompt,
              }
         ]
 
