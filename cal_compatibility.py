@@ -17,6 +17,7 @@ def cosine_similarity(vector1, vector2):
     norm_vector2 = np.linalg.norm(flat_vector2)
     return dot_product / (norm_vector1 * norm_vector2)
 
+
 def cal_compatibility():
     n = 4096
     access_feature = []
@@ -24,7 +25,7 @@ def cal_compatibility():
     for item_id in range(1, 9):
         access_feature.append(vgg16.extract_features('downloads/access_' + '%s.jpg' % item_id)[0])
     for item_id in range(1, 7):
-        cloth_feature.append(vgg16.extract_features('downloads/gen_cloth_' + '%s.jpeg' % item_id)[0])
+        cloth_feature.append(vgg16.extract_features('downloads/cloth_' + '%s.jpeg' % item_id)[0])
 
     best_score = float('-inf')
     best_cloth = 0
@@ -37,5 +38,5 @@ def cal_compatibility():
                 best_cloth = j
                 best_access = i
     print(best_cloth, best_access)
-    picture = [f"downloads/gen_cloth_{best_cloth}.jpeg", f"downloads/access_{best_access}.jpg"]
+    picture = [f"downloads/cloth_{best_cloth}.jpeg", f"downloads/access_{best_access}.jpg"]
     return picture
