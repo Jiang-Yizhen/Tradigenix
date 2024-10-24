@@ -15,7 +15,7 @@ save_directory = "downloads"
 
 def get_select_index(evt: gr.SelectData, gallery):
     print(gallery[evt.index][0])
-    with open(os.path.join(save_directory, f"cloth_intro_{evt.index//2+1}.txt"), "r") as f:
+    with open(os.path.join(save_directory, f"cloth_intro_{evt.index+1}.txt"), "r") as f:
         introduction = f.read()
     return gallery[evt.index][0], introduction
 
@@ -29,7 +29,7 @@ def update_choices(dropout1, dropout2,):
     return dropout2
 
 
-with gr.Blocks(css="styles.css", theme=gr.themes.Base()) as demo:
+with gr.Blocks(theme=gr.themes.Base()) as demo:
     with gr.Row():
         # 左侧模块
         with gr.Column(scale=1):
