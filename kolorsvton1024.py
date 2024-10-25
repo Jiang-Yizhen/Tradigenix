@@ -37,6 +37,7 @@ def encode_jwt_token(ak, sk):
 # CLOTH_IMAGE = image_to_base64(r"F:\codetest24\0903_lf\vton\hanfu.jpg")  # 替换为服饰图片的Base64或URL
 # CALLBACK_URL = ""  # 可选，任务结果回调通知URL
 SAVE_DIRECTORY = "downloads/kolor"
+BASE_URL = "https://api.klingai.com/v1/images/kolors-virtual-try-on"
 # ========== 步骤 1：创建虚拟试穿任务 ==========
 
 def create_virtual_tryon_task(humen, cloth):
@@ -49,7 +50,7 @@ def create_virtual_tryon_task(humen, cloth):
     # API 请求的基础配置
     api_token = encode_jwt_token(ak, sk)
     print(api_token) # 打印生成的API_TOKEN
-    BASE_URL = "https://api.klingai.com/v1/images/kolors-virtual-try-on"
+
 
     # 请求头
     HEADERS = {
