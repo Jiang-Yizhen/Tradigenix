@@ -16,8 +16,6 @@ def user_dress_cat(user_pic, cloth_gen, index):
     filename_2 = 'cloth_image.jpg'
     file_path_1 = os.path.join(UPLOAD_FOLDER, filename_1)
     file_path_2 = os.path.join(UPLOAD_FOLDER, filename_2)
-    fal_file_path_1=fal_client.upload_file(file_path_1)
-    fal_file_path_2=fal_client.upload_file(file_path_2)
     Image.fromarray(user_pic).save(file_path_1)
     Image.fromarray(cloth_gen).save(file_path_2)
     time_2 = time.time()
@@ -27,8 +25,8 @@ def user_dress_cat(user_pic, cloth_gen, index):
     handler = fal_client.submit(
         "fal-ai/cat-vton",
         arguments={
-            "human_image_url": fal_file_path_1,
-            "garment_image_url": fal_file_path_2,
+            "human_image_url": fal_client.upload_file(file_path_1),
+            "garment_image_url": fal_client.upload_file(file_path_2),
             "cloth_type": "overall"
         },
     )
