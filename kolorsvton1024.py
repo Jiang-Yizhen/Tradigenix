@@ -171,8 +171,8 @@ def kolor_vton(humen, cloth, i):
             status = query_virtual_tryon_task(task_id, i, HEADERS)
             if status in ['succeed', 'failed']:
                 break
-            print("任务正在处理中，等待5秒后重试...")
-            time.sleep(5)  # 等待5秒后重试
+            print("任务正在处理中，等待1秒后重试...")
+            time.sleep(1)  # 等待1秒后重试
 
         # 3. 查询任务列表
         query_task_list(page_num=1, page_size=10, HEADERS=HEADERS)
