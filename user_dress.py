@@ -74,8 +74,8 @@ def user_dress_kolor(user_pic, cloth_gen, index):
 
 def user_cloths(user_pic, cloth_gen):
     user_cloth = []
-    for i in range(1, 4):
-        user_cloth.append(user_dress_cat(user_pic, cloth_gen, i))
+    # for i in range(1, 4):
+    #     user_cloth.append(user_dress_cat(user_pic, cloth_gen, i))
     # for i in range(4, 7):
     #     user_dress_kolor(user_pic, cloth_gen, i)
     #     user_cloth.append(os.path.join(save_directory, f"kolor/kolor_{i}.png"))
