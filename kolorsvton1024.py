@@ -16,8 +16,8 @@ def image_to_base64(image_path):
         return base64.b64encode(image_file.read()).decode('utf-8')
 
 
-ak = "c1748494bc5d42ed8db2b2d24ceb1a2b"  # 填写access key
-sk = "1cf0bbef768746f79d30ef13630b393b"  # 填写secret key
+ak = "43f0624c820447cfbabbbf6ad60b93a0"  # 填写access key
+sk = "5424a4691dc94e68813445d6d55a4b71"  # 填写secret key
 
 
 def encode_jwt_token(ak, sk):
