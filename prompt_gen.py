@@ -7,7 +7,7 @@ na_prompt_file = pd.read_excel('汉服-男词库.xlsx')
 nv_prompt = nv_prompt_file.to_string(index=False)
 na_prompt = na_prompt_file.to_string(index=False)
 
-os.environ["OPENAI_API_KEY"] = "sk-HGnXvbVEeSkolzhm3423741621A54f39A3225247AcEcD338"
+os.environ["OPENAI_API_KEY"] = ""
 os.environ["OPENAI_BASE_URL"] = "http://15.204.101.64:4000/v1"
 
 
