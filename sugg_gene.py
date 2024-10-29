@@ -3,7 +3,7 @@ from clothGen import pro_gen
 import os
 from openai import OpenAI
 
-os.environ["OPENAI_API_KEY"] = "sk-HGnXvbVEeSkolzhm3423741621A54f39A3225247AcEcD338"
+os.environ["OPENAI_API_KEY"] = ""
 os.environ["OPENAI_BASE_URL"] = "http://15.204.101.64:4000/v1"
 
 
