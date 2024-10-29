@@ -15,9 +15,9 @@ from PIL import Image
 import io
 import gradio as gr
 
-appid = "11ce2152"  #填写控制台中获取的 APPID 信息
-api_secret = "N2ExOTc3MDc1OWZjMTkyNzFlYjA3ZTAz"  #填写控制台中获取的 APISecret 信息
-api_key = "4f6313fa6c05dea06e4e18b46e63b20f"  #填写控制台中获取的 APIKey 信息
+appid = ""  #填写控制台中获取的 APPID 信息
+api_secret = ""  #填写控制台中获取的 APISecret 信息
+api_key = ""  #填写控制台中获取的 APIKey 信息
 
 imageunderstanding_url = "wss://spark-api.cn-huabei-1.xf-yun.com/v2.1/image"  #云端环境的服务地址
 answer = ""
