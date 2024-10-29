@@ -17,14 +17,13 @@ This project is a personalized Hanfu design website developed relying on Hugging
 
 # Local Website Deployment Process
 1. Install Dependencies
-```
-pip install -r requirement.txt
-```
+    ```
+    pip install -r requirement.txt
+    ```
 2. API Requirements
-
-We have integrated OpenAI's GPT-4-O conversational model, Spark's image recognition model, fai ai's sdxl-fast text-to-image generation model, and Kuaishou's KOLor virtual try-on model.
+   We have integrated OpenAI's GPT-4-O conversational model, Spark's image recognition model, fai ai's sdxl-fast text-to-image generation model, and     Kuaishou's KOLor virtual try-on model.
 
 4. Run Program
-```
-python app.py
-```
+    ```
+    python app.py
+    ```
